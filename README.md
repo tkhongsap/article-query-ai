@@ -1,7 +1,7 @@
 
-# DocQuery AI
+# article-query-ai
 
-**DocQuery AI** is a Python-based tool designed for loading documents, summarizing content, and querying information using OpenAI's GPT models. The program processes documents into nodes and provides summarization and context-based retrieval via a user-friendly query interface.
+**article-query-ai** is a Python-based tool designed for loading documents, summarizing content, and querying information using OpenAI's GPT models. The program processes documents into nodes and provides summarization and context-based retrieval via a user-friendly query interface.
 
 ## Features
 
@@ -15,8 +15,8 @@
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/DocQuery-AI.git
-   cd DocQuery-AI
+   git clone https://github.com/your-username/article-query-ai.git
+   cd article-query-ai
    ```
 
 2. **Install the required dependencies**:
