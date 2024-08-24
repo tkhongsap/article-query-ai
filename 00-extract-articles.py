@@ -28,7 +28,7 @@ params = {
 }
 
 # Directory to save the split files
-output_dir = r'D:\github-repo-tkhongsap\editor-in-chief\docs'
+output_dir = r'D:\github-repo-tkhongsap\editor-in-chief\tmp'
 
 # Ensure the output directory exists
 os.makedirs(output_dir, exist_ok=True)
