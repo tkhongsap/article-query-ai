@@ -9,11 +9,22 @@ from dotenv import load_dotenv
 from pprint import pprint
 from pathlib import Path
 from utils.get_doc_tools import get_doc_tools
+from utils.custom_css_banner import get_social_news_banner
 from llama_index.llms.openai import OpenAI as LlamaOpenAI
 from llama_index.embeddings.openai import OpenAIEmbedding
 from llama_index.core import VectorStoreIndex
 from llama_index.core.objects import ObjectIndex
 from llama_index.core.agent import FunctionCallingAgentWorker, AgentRunner
+
+# Set page config
+st.set_page_config(page_title="💬 Intelligence Social News Analytics", page_icon="📺", layout="wide")
+
+# Apply custom CSS
+@st.cache_data
+def load_social_news_banner():
+    return get_social_news_banner()
+
+st.markdown(load_social_news_banner(), unsafe_allow_html=True)
 
 # Function to get the OpenAI API key from Streamlit secrets
 def get_openai_api_key():
@@ -25,7 +36,7 @@ def get_openai_api_key():
 # Initialize OpenAI API client with API key from Streamlit secrets
 openai_api_key = get_openai_api_key()
 openai_client = LlamaOpenAI(api_key=openai_api_key)
-st.success("OpenAI client initialized successfully.")
+st.sidebar.success("OpenAI client initialized successfully.")
 
 @st.cache_resource
 def load_and_process_documents():
@@ -64,36 +75,43 @@ def load_and_process_documents():
 
     return AgentRunner(agent_worker)
 
+# Load the agent
+agent = load_and_process_documents()
+st.sidebar.success("Agent loaded successfully.")
+
 # Streamlit app layout
 st.title("AI Journalist Query System")
 
-# Load documents and create agent (this will be cached)
-with st.spinner("Loading and processing documents... This may take a few moments."):
-    agent = load_and_process_documents()
-st.success("Documents loaded and processed successfully!")
+# Display some information about the loaded documents
+# st.sidebar.header("Document Information")
+# docs_directory = Path("docs")
+# num_docs = len([f for f in docs_directory.iterdir() if f.is_file() and f.suffix == '.txt'])
+# st.sidebar.write(f"Number of loaded documents: {num_docs}")
 
-# Create a text input for the user query
-user_query = st.text_input("Ask a question about the articles:", key="user_query")
+# Chat input and response
+user_query = st.chat_input("Ask a question about the articles")
 
 if user_query:
-    if st.button("Get Answer"):
-        with st.spinner("Generating response..."):
-            try:
-                response = agent.query(user_query)
-                st.write("Agent response:", response)
-            except Exception as e:
-                st.error(f"An error occurred while processing your query: {str(e)}")
+    with st.spinner("Generating response..."):
+        try:
+            response = agent.query(user_query)
+            
+            # Display the main response text
+            st.write("Agent response:", response.response)
+            
+            # Optionally, display the sources if available
+            # if response.source_nodes:
+            #     st.write("Source Nodes:", response.source_nodes)
+            
+            # Optionally, display formatted sources
+            # formatted_sources = response.get_formatted_sources()
+            # if formatted_sources:
+            #     st.write("Formatted Sources:", formatted_sources)
+                
+        except Exception as e:
+            st.error(f"An error occurred while processing your query: {str(e)}")
+            st.exception(e)  # This will display the full traceback for debugging
 
-# Optional: Add more Streamlit widgets for customization
-st.sidebar.header("Options")
-top_k = st.sidebar.slider("Number of similar articles to consider", min_value=1, max_value=10, value=7)
-# You can use this top_k value to dynamically adjust your agent's behavior if needed
-
-# Display some information about the loaded documents
-st.sidebar.header("Document Information")
-docs_directory = Path("docs")
-num_docs = len([f for f in docs_directory.iterdir() if f.is_file() and f.suffix == '.txt'])
-st.sidebar.write(f"Number of loaded documents: {num_docs}")
 
 # Footer
 st.markdown("---")
