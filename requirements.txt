@@ -4,4 +4,5 @@ nest_asyncio==1.6.0
 openai==1.42.0
 python-dotenv==1.0.1
 Requests==2.32.3
-streamlit
+streamlit==1.32.0
+streamlit==1.36.0
