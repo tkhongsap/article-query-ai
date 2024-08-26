@@ -4,8 +4,8 @@ from datetime import datetime, timedelta
 from collections import defaultdict
 
 # Define input and output directories
-input_dir = r'D:\github-repo-tkhongsap\editor-in-chief\tmp\docs-by-date'
-output_dir = r'D:\github-repo-tkhongsap\editor-in-chief\docs'
+input_dir = r'D:\github-repo-tkhongsap\article-query-ai\tmp\docs-by-date'
+output_dir = r'D:\github-repo-tkhongsap\article-query-ai\docs'
 
 # Ensure the output directory exists
 os.makedirs(output_dir, exist_ok=True)

@@ -1,0 +1,155 @@
+id: 19026
+attributes:
+    title: คุณปู่ตุ๊กตาอับเฉากำลังโดน ‘สายมู’ ทำร้าย นำเหรียญยัดร่องหิน หวังสะเดาะเคราะห์
+    slug: stone-doll-attacked-by-someone-who-believed-in-fortune
+    createdAt: 2024-08-23T05:19:56.264Z
+    updatedAt: 2024-08-26T01:30:00.241Z
+    publishedAt: 2024-08-26T01:30:00.192Z
+    locale: th
+    excerpt: สายมูหวังสะเดาะเคราะห์ แต่กลับทำร้ายตุ๊กตาหินหรือ “ตัวอับเฉา” โดยไม่รู้ตัว!?
+    cda_reference: None
+    template: General
+    bitlyGen: None
+    categories:
+        data:
+            id: 149
+            attributes:
+                title: ศิลปะ-วัฒนธรรม
+                createdAt: 2023-07-05T11:30:47.582Z
+                updatedAt: 2023-07-17T18:15:44.929Z
+                publishedAt: 2023-02-20T09:42:36.775Z
+                locale: th
+                slug: culture
+                order: 6
+            id: 196
+            attributes:
+                title: วัฒนธรรมย่อย
+                createdAt: 2023-07-05T11:31:10.351Z
+                updatedAt: 2023-07-17T18:24:54.248Z
+                publishedAt: 2023-02-20T09:37:28.772Z
+                locale: th
+                slug: sub-culture
+                order: 46
+    tags:
+        data:
+    highlights:
+        id: 41557
+        content: ตุ๊กตาหินใช้ถ่วงเรือสำเภากลับจากจีน เข้ามาในไทยตั้งแต่สมัยรัชกาลที่ 3
+        internalName: ตุ๊กตาหินใช้ถ่วงเรือสำเภากลับจากจีน เข้ามาในไทยตั้งแต่สมัยรัชกาลที่ 3
+        id: 41558
+        content: สายมูหวังสะเดาะเคราะห์ ใช้เหรียญยัดใส่ร่องหินบนตัวตุ๊กตา ทำร้าย “ตัวอับเฉา” โดยไม่รู้ตัว
+        internalName: สายมูหวังสะเดาะเคราะห์ ใช้เหรียญยัดใส่ร่องหินบนตัวตุ๊กตา ทำร้าย “ตัวอับเฉา” โดยไม่รู้ตัว
+    contents:
+        id: 21228
+        __component: article.richtext
+        content: ตุ๊กตาหินหรือ “ตัวอับเฉา” หรือ “เครื่องอับเฉา” (Chinese Ship Ballast) กำลังโดนทำร้าย!?
+
+ตุ๊กตาหินที่ตั้งเรียงรายอยู่รอบพระอุโบสถตามวัดวาแถวพระนคร เช่น วัดพระแก้ว วัดโพธิ์ วัดอรุณฯ วัดบวรฯ วัดสุทัศน์ ฯลฯ ติดสอยเรือสำเภามาจากประเทศจีน ตั้งแต่สมัยรัชกาลที่ 3 ในฐานะเฉาใช้ถ่วงเรือสำเภาหลังกลับจากการค้าขาย ก่อนจะกลายมาเป็นตุ๊กตาประดับพระอารามหลวงในภายหลัง
+        id: 21229
+        __component: article.richtext
+        content: ตัวอับเฉาเหล่านี้มาอยู่เมืองไทยตั้งแต่ยังใช้ชื่อสยาม นับถึงวันนี้ก็เกือบสองร้อยปี แต่อยู่ดีๆ มาวันนี้คุณปู่ตุ๊กตาหินกำลังถูกทำร้ายด้วยความไม่รู้ของสายมูบางคน
+
+หลักฐานการทำร้ายปรากฏให้เห็นที่ตุ๊กตาหินตัวใหญ่สองตัวที่ยืนอยู่หน้าวิหารวัดสุทัศน์เทพวราราม โดยมีคนเอาเหรียญ...ทั้งเหรียญบาท ห้าบาท บ้างก็สิบบาท มาสอดไว้ที่ช่องว่างของรอยต่อระหว่างท่อนบนและล่างของตัวตุ๊กตา
+        id: 21230
+        __component: article.richtext
+        content: คนทำอาจไม่รู้ และทำไปด้วยความเชื่อเรื่องโชคลางบางอย่าง ซึ่งไม่รู้ว่ามีนัยยะหรือความหมายว่าอย่างไร (ใครรู้วานบอกที) และก็เชื่อว่าคนที่ทำก็คงไม่มีเจตนาทำร้ายคุณปู่ตุ๊กตาหินแต่อย่างใด
+
+ทุกวันนี้ภาวะเศรษฐกิจดูน่าเป็นห่วง การเมืองก็ไม่แน่นอน คนเล็กคนน้อยและชาวบ้านคนค้าคนขายลำบากยากเข็ญ คนจำนวนไม่น้อยที่หวั่นไหวกับอนาคตที่ดูสิ้นหวัง จึงหันไปพึ่งพาสิ่งศักดิ์สิทธิ์ หวังทำบุญสะเดาะเคราะห์ ให้ที่ร้ายบรรเทาเบาคลาย ให้ที่ดีนั้นดีขึ้นไม่เสียหาย
+
+เข้าใจว่าคนเข้าวัดทำบุญ ถ้าไม่ทำบุญเป็นปกติ ส่วนใหญ่มาก็เพราะมีทุกข์ จึงหันหน้าเข้าวัด ทำบุญเป็นเรื่องดี คิดจะสะเดาะเคราะห์ก็ได้ ถ้าช่วยให้ใจผ่อนคลาย
+        id: 21231
+        __component: article.richtext
+        content: วิธีทำบุญจะบริจาคก็ได้ มีตู้บริจาคตามวัตถุประสงค์วางไว้เรียงราย ไม่ว่าบำรุงศาสนา ชำระหนี้สงฆ์ บริจาคให้ผู้ยากไร้ หรือจะไหว้พระ นั่งสมาธิ สมาทานศีลก็นับว่าเป็นบุญ
+
+แต่การนำเหรียญไปยัดใส่ร่องหินบนตัวตุ๊กตาอับเฉา อาจเข้าข่าย “ทำคุณบูชาโทษ” เพราะเข้าใจว่าสิ่งที่ทำเป็นบุญ แต่แท้จริงคือการทำลายของสงฆ์และสมบัติสาธารณะ
+
+เหตุการณ์ที่เกิดขึ้นกับตุ๊กตาหินอับเฉาชวนให้นึกถึงพุทธภาษิตที่ว่า
+        id: 4488
+        __component: article.quote
+        title: None
+        content: “การบำเพ็ญประโยชน์ โดยไม่ฉลาดในประโยชน์ จะนำความสุขมาให้ไม่ได้เลย ผู้มีปัญญาทรามย่อมพร่าประโยชน์ ดุจลิงเฝ้าสวนฉะนั้น”
+        by: พุทธภาษิต
+        id: 21232
+        __component: article.richtext
+        content: ที่ว่าเหมือนลิงเฝ้าสวนเป็นอย่างไร มีผู้เขียนใช้นามปากกาว่า อิ่มธรรม อธิบายในบทความ ทำคุณบูชาโทษ ในเว็บไซต์[กัลยาณมิตร](https://www.kalyanamitra.org/th/uniboon_detail.php?page=3671)ไว้ว่า
+
+“...เหมือนลิงโง่เฝ้าสวนที่ช่วยรดน้ำต้นไม้ มันดึงต้นไม้ดูรากเพื่อรดน้ำ ต้นไหนรากยาวก็รดมาก ต้นไหนรากสั้นก็รดน้อย ต้นไม้เหล่านั้นก็ถึงแก่ความตายหมด
+
+“ลิงคิดว่าตนเองขยัน คิดว่าตนเองทำถูกต้องตามทฤษฎีตน ความขยันที่ไม่ถูกวัตถุประสงค์ ไม่พิจารณาให้ดี ความคิดหรือทฤษฎีที่ผิด ไม่ประกอบด้วยปัญญา ย่อมไม่ก่อเกิดประโยชน์ ไม่ก่อเกิดความสุข
+
+“ดังนั้นพึงพิจารณาสิ่งเหล่านี้ให้ดีก่อนกระทำสิ่งใด...”
+    credits:
+        id: 23099
+        display: True
+        secondary: False
+        credit:
+            data:
+                id: 3
+                attributes:
+                    createdAt: 2023-07-07T14:18:20.564Z
+                    updatedAt: 2023-07-07T14:18:20.564Z
+                    publishedAt: 2023-07-07T14:18:20.547Z
+                    locale: th
+                    internalName: กองบรรณาธิการ SPACEBAR - เรื่อง
+                    cda_reference: 17wrrprz4AUmT6LLORvkye
+                    collaborator:
+                        data:
+                            id: 51
+                            attributes:
+                                name: กองบรรณาธิการ SPACEBAR
+                                createdAt: 2023-07-07T12:35:06.937Z
+                                updatedAt: 2023-08-11T09:07:36.441Z
+                                publishedAt: 2023-07-07T12:35:06.926Z
+                                locale: th
+                                slug: editorial-team
+                                bio: None
+                    title:
+                        data:
+                            id: 2
+                            attributes:
+                                name: เรื่อง
+                                createdAt: 2023-07-07T12:07:32.795Z
+                                updatedAt: 2023-07-27T17:15:38.150Z
+                                publishedAt: 2023-07-07T12:07:32.781Z
+                                locale: th
+                                slug: story
+    share:
+        id: 19815
+        title: คุณปู่ตุ๊กตาอับเฉากำลังโดน ‘สายมู’ ทำร้าย นำเหรียญยัดร่องหิน หวังสะเดาะเคราะห์
+        description: สายมูหวังสะเดาะเคราะห์ แต่กลับทำร้ายตุ๊กตาหินหรือ “ตัวอับเฉา” โดยไม่รู้ตัว!?
+        keywords: spacebar สเปซบาร์, ตุ๊กตาอับเฉา, วัดสุทัศน์, สายมู, เหรียญ, สะเดาะเคราะห์
+        image:
+            data:
+                id: 108002
+                attributes:
+                    name: stone-doll-attacked-by-someone-who-believed-in-fortune-VIBE-Social.jpg
+                    alternativeText: spacebar สเปซบาร์, ตุ๊กตาอับเฉา, วัดสุทัศน์, สายมู, เหรียญ, สะเดาะเคราะห์
+                    caption: None
+                    width: 1200
+                    height: 630
+                    formats:
+                        thumbnail:
+                            ext: .jpg
+                            url: https://cdn.spacebar.th/thumbnail_stone_doll_attacked_by_someone_who_believed_in_fortune_VIBE_Social_eec1b730a1.jpg
+                            hash: thumbnail_stone_doll_attacked_by_someone_who_believed_in_fortune_VIBE_Social_eec1b730a1
+                            mime: image/jpeg
+                            name: thumbnail_stone-doll-attacked-by-someone-who-believed-in-fortune-VIBE-Social.jpg
+                            path: None
+                            size: 12.71
+                            width: 245
+                            height: 129
+                    hash: stone_doll_attacked_by_someone_who_believed_in_fortune_VIBE_Social_eec1b730a1
+                    ext: .jpg
+                    mime: image/jpeg
+                    size: 611.21
+                    url: https://cdn.spacebar.th/stone_doll_attacked_by_someone_who_believed_in_fortune_VIBE_Social_eec1b730a1.jpg
+                    previewUrl: None
+                    provider: strapi-provider-cloudflare-r2
+                    provider_metadata: None
+                    createdAt: 2024-08-23T15:02:51.937Z
+                    updatedAt: 2024-08-23T15:03:39.167Z
+        altImage:
+            data: None
+    references:
+==================================================
+

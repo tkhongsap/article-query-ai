@@ -1,3 +1,134 @@
+id: 19068
+attributes:
+    title: ‘สามารถ’ ชี้ ‘ปชป.’ เป็น ‘ฝ่ายค้าน’ ทำประโยชน์ได้มากกว่า อย่าพินอบพิเทา ‘รัฐบาล’
+    slug: former-deputy-leader-of-the-democratic-party-expressed-his-opinion
+    createdAt: 2024-08-25T06:33:42.084Z
+    updatedAt: 2024-08-25T06:33:44.398Z
+    publishedAt: 2024-08-25T06:33:44.378Z
+    locale: th
+    excerpt: ในนามคนประชาธิปัตย์ ! ‘สามารถ’ อดีตรองหัวหน้าพรรค ข้องใจทำไมแบ่ง ‘ปชป.’ ถูกแบ่งเป็น 2 ก๊ก เชื่อเป็น ‘ฝ่ายค้าน’ ทำประโยชน์ชาติ-ปชช. ได้มากกว่า ไม่ใช่ไปพินอบพิเทา ‘รัฐบาลเพื่อไทย’  
+    cda_reference: None
+    template: General
+    bitlyGen: None
+    categories:
+        data:
+            id: 151
+            attributes:
+                title: การเมือง
+                createdAt: 2023-07-05T11:30:50.438Z
+                updatedAt: 2023-07-17T18:22:54.085Z
+                publishedAt: 2023-02-20T09:40:57.635Z
+                locale: th
+                slug: politics
+                order: 3
+            id: 181
+            attributes:
+                title: การเมืองระดับชาติ
+                createdAt: 2023-07-05T11:31:05.158Z
+                updatedAt: 2023-07-17T18:23:38.711Z
+                publishedAt: 2023-02-20T09:45:14.963Z
+                locale: th
+                slug: national
+                order: 31
+    tags:
+        data:
+    highlights:
+        id: 41669
+        content: ในนามคนประชาธิปัตย์ ! ‘สามารถ’ อดีตรองหัวหน้าพรรค ข้องใจทำไมแบ่ง ‘ปชป.’ ถูกแบ่งเป็น 2 ก๊ก 
+
+
+        internalName: None
+        id: 41670
+        content: เชื่อเป็น ‘ฝ่ายค้าน’ ทำประโยชน์ชาติ-ปชช. ได้มากกว่า ไม่ใช่ไปพินอบพิเทา ‘รัฐบาลเพื่อไทย’ 
+        internalName: None
+    contents:
+        id: 21335
+        __component: article.richtext
+        content: **‘สามารถ ราชพลสิทธิ์'** อดีตรองหัวหน้าพรรคประชาธิปัตย์(ปชป.) โพสต์เฟซบุ๊กในหัวข้อ **‘ไปเป็น รมต. เลย ถ้าคิดว่าทำงานเก่ง’**   มีความว่า  ในฐานะสมาชิกพรรค ปชป. คนหนึ่ง  ผมเพิ่งได้ยินว่ามีผู้แบ่ง สส.ปชป. ออกเป็น 2 กลุ่ม  กลุ่มหนึ่ง **‘พูดเก่ง ตำหนิเก่ง แต่ทำงานไม่เก่ง‘ ** อีกกลุ่ม **’พูดไม่เก่ง ตำหนิไม่เก่ง แต่ทำงานเก่ง‘**    กลุ่มที่อ้างว่าทำงานเก่ง บอกว่ารอเข้าร่วมรัฐบาล เพราะจะได้มีโอกาสสร้างผลงานให้กับประเทศชาติและประชาชน  เท่ากับสร้างผลงานให้กับพรรคด้วย  
+
+แต่เขาคงลืมไปว่า  ฝ่ายค้านก็สามารถสร้างผลงานให้กับประเทศชาติ ประชาชนและพรรคได้ด้วย ถ้าเขามุ่งมั่นค้านอย่างสร้างสรรค์ด้วยการปกป้องผลประโยชน์ของประเทศชาติและประชาชนอย่างเต็มที่ ซึ่งมีหลายเรื่องที่ควรทำ ไม่วางเฉย ด้วยลักษณะท่าที **’เกรงใจรัฐบาล’** ครั้งนี้ จะได้เป็น รมต. ตามปรารถนาแล้ว  ขอให้สร้างผลงานตามที่ได้ประกาศก้องไว้ อย่าลืมว่าจะต้องเร่งสร้างประโยชน์ให้กับประเทศชาติและประชาชน และนำผลงานเหล่านั้นกลับมากอบกู้พรรคให้ได้ ผมจะติดตาม และเป็นกำลังใจให้  ที่สำคัญ การเข้าร่วมรัฐบาลจะต้องเข้าร่วมอย่างมี **‘เกียรติและศักดิ์ศรี’**   ไม่ปล่อยให้พรรคถูกตราหน้าว่าเป็นเพียงแค่พรรค **‘อะไหล่-รอเสียบ’ ** เท่านั้น   อีกทั้งการเลือกตั้งครั้งหน้าจะต้องทำให้พรรค ปชป. มี สส.มากกว่าเดิม !  
+
+สามารถ ยังให้สัมภาษณ์เพิ่มเติมด้วยว่า หลังเห็นข่าวที่เลขาธิการพรรคประชาธิปัตย์ ออกมาพูดเช่นนี้ แบ่งเป็น2กลุ่ม ทั้งที่เป็นพรรคเดียวกัน ทำไมผู้ใหญ่ของพรรคมาพูดแบ่งแยกเช่นนี้ ทั้งที่คุมเสียงข้างมากทั้งในกรรมการบริหารพรรค และ สส. พรรคอยู่แล้ว ออกมติใดก็ชนะอยู่แล้ว  ดังนั้นในฐานะอดีตรองหัวหน้าพรรรค และยังเป็นสมาชิกพรรคประชาธิปัตย์ คนหนึ่งเห็นว่า ต้องพูดแสดงความคิดเห็นให้สังคมได้รับทราบว่า การทำหน้าที่ของสส. หรือของพรรคการเมือง เป็นฝ่ายค้านก็สามารถทำประโยชน์เพื่อประเทศชาติบ้านเมืองและเป็นปากเสียงแทนพี่น้องประชาชนได้  และทำได้ดีกว่าการเป็นรัฐบาลที่เป็นรัฐบาลผสมด้วย เพราะถ้าเราทำหน้าที่ฝ่ายค้านเข้มแข็ง ตรวจสอบได้ทุกกระทรวง ทบวง กรมของรัฐบาล  ดีกว่าการเป็นรัฐมนตรี ที่รับผิดชอบงานแค่กระทรวงเดียว อยู่ที่ว่า **คุณทำหน้าที่ฝ่ายค้าน เต็มที่ เข้มแข็ง จริงจังแล้วหรือไม่ อย่างไร**
+        id: 4528
+        __component: article.quote
+        title: None
+        content: “ไม่ใช่พินอบพิเทาต่อรัฐบาล เมื่อคิดว่าทำงานเก่งก็ขอให้ไปเป็นรัฐมนตรีตามที่ต้องการ และบริหารงานให้เห็นเป็นรูปธรรม นำชื่อเสียงฟื้นศรัทธาให้พรรคประชาธิปัตย์ ตามที่ผมโพสต์ไป ซึ่งที่เขียนไป ไม่ได้ขัดแย้งกับใครแต่อย่างใด” 
+        by: สามารถ กล่าว 
+    credits:
+        id: 23154
+        display: True
+        secondary: False
+        credit:
+            data:
+                id: 3
+                attributes:
+                    createdAt: 2023-07-07T14:18:20.564Z
+                    updatedAt: 2023-07-07T14:18:20.564Z
+                    publishedAt: 2023-07-07T14:18:20.547Z
+                    locale: th
+                    internalName: กองบรรณาธิการ SPACEBAR - เรื่อง
+                    cda_reference: 17wrrprz4AUmT6LLORvkye
+                    collaborator:
+                        data:
+                            id: 51
+                            attributes:
+                                name: กองบรรณาธิการ SPACEBAR
+                                createdAt: 2023-07-07T12:35:06.937Z
+                                updatedAt: 2023-08-11T09:07:36.441Z
+                                publishedAt: 2023-07-07T12:35:06.926Z
+                                locale: th
+                                slug: editorial-team
+                                bio: None
+                    title:
+                        data:
+                            id: 2
+                            attributes:
+                                name: เรื่อง
+                                createdAt: 2023-07-07T12:07:32.795Z
+                                updatedAt: 2023-07-27T17:15:38.150Z
+                                publishedAt: 2023-07-07T12:07:32.781Z
+                                locale: th
+                                slug: story
+    share:
+        id: 19858
+        title: ‘สามารถ’ ชี้ ‘ปชป.’ เป็น ‘ฝ่ายค้าน’ ทำประโยชน์ได้มากกว่า อย่าพินอบพิเทา ‘รัฐบาล’
+        description: ในนามคนประชาธิปัตย์ ! ‘สามารถ’ อดีตรองหัวหน้าพรรค ข้องใจทำไมแบ่ง ‘ปชป.’ ถูกแบ่งเป็น 2 ก๊ก เชื่อเป็น ‘ฝ่ายค้าน’ ทำประโยชน์ชาติ-ปชช. ได้มากกว่า ไม่ใช่ไปพินอบพิเทา ‘รัฐบาลเพื่อไทย’
+        keywords: spacebar สเปซบาร์
+        image:
+            data:
+                id: 108132
+                attributes:
+                    name: Former-Deputy-Leader-of-the-Democratic-Party-expressed-his-opinion-SPACEBAR-Social.jpg
+                    alternativeText: None
+                    caption: None
+                    width: 1200
+                    height: 630
+                    formats:
+                        thumbnail:
+                            ext: .jpg
+                            url: https://cdn.spacebar.th/thumbnail_Former_Deputy_Leader_of_the_Democratic_Party_expressed_his_opinion_SPACEBAR_Social_f4dea012e4.jpg
+                            hash: thumbnail_Former_Deputy_Leader_of_the_Democratic_Party_expressed_his_opinion_SPACEBAR_Social_f4dea012e4
+                            mime: image/jpeg
+                            name: thumbnail_Former-Deputy-Leader-of-the-Democratic-Party-expressed-his-opinion-SPACEBAR-Social.jpg
+                            path: None
+                            size: 9.74
+                            width: 245
+                            height: 129
+                    hash: Former_Deputy_Leader_of_the_Democratic_Party_expressed_his_opinion_SPACEBAR_Social_f4dea012e4
+                    ext: .jpg
+                    mime: image/jpeg
+                    size: 260.16
+                    url: https://cdn.spacebar.th/Former_Deputy_Leader_of_the_Democratic_Party_expressed_his_opinion_SPACEBAR_Social_f4dea012e4.jpg
+                    previewUrl: None
+                    provider: strapi-provider-cloudflare-r2
+                    provider_metadata: None
+                    createdAt: 2024-08-25T06:32:18.772Z
+                    updatedAt: 2024-08-25T06:32:18.772Z
+        altImage:
+            data: None
+    references:
+==================================================
+
 id: 19067
 attributes:
     title: 7 มาตรการ ผู้ประสบภัยน้ำท่วมภาคเหนือ

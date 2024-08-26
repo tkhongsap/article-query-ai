@@ -3,8 +3,8 @@ import json
 from datetime import datetime, timedelta
 
 # Directory containing the JSON files
-input_dir = r'D:\github-repo-tkhongsap\editor-in-chief\tmp'
-output_dir = r'D:\github-repo-tkhongsap\editor-in-chief\tmp\docs-by-date' 
+input_dir = r'D:\github-repo-tkhongsap\article-query-ai\tmp'
+output_dir = r'D:\github-repo-tkhongsap\article-query-ai\tmp\docs-by-date' 
 
 # Ensure the output directory exists
 os.makedirs(output_dir, exist_ok=True)
