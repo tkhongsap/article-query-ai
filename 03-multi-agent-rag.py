@@ -19,14 +19,14 @@ warnings.filterwarnings("ignore", category=DeprecationWarning)
 # Load environment variables from .env file
 load_dotenv()
 
-# Allow for nested asyncio event loops
-nest_asyncio.apply()
+# # Allow for nested asyncio event loops
+# nest_asyncio.apply()
 
 # Initialize OpenAI API client with API key from environment variables
 openai_client = LlamaOpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 
-# Define the directory containing the articles
-docs_directory = Path(r"D:\github-repo-tkhongsap\editor-in-chief\docs")
+# Define the directory containing the articles relative to the script location
+docs_directory = Path(__file__).parent / 'docs'
 
 # Collect all .txt files in the directory
 articles = [file for file in docs_directory.iterdir() if file.is_file() and file.suffix == '.txt']
