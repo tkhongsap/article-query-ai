@@ -79,7 +79,7 @@ def load_and_process_documents():
         vector_query_tool, summary_tool = get_doc_tools(str(article), article.stem)
         paper_to_tools_dict[article] = [vector_query_tool, summary_tool]
 
-    llm = LlamaOpenAI(model="gpt-4o", api_key=openai_api_key, max_tokens=3000)
+    llm = LlamaOpenAI(model="gpt-4o", api_key=openai_api_key, max_tokens=3000, temperature=0.2)
     embed_model = OpenAIEmbedding(model="text-embedding-3-large", api_key=openai_api_key)
 
     all_tools = [tool for tools in paper_to_tools_dict.values() for tool in tools]
