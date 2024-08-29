@@ -10,42 +10,41 @@ output_dir = r'D:\github-repo-tkhongsap\article-query-ai\docs'
 # Ensure the output directory exists
 os.makedirs(output_dir, exist_ok=True)
 
-# Function to write dictionary content to file as markdown
-def write_dict_to_markdown(article, file):
-    """Write the article content to a file in the specified markdown format."""
+# Function to write dictionary content to file as plain text
+def write_dict_to_text(article, file):
+    """Write the article content to a file in plain text format."""
     # Write metadata at the top
-    file.write(f"---\n")
-    file.write(f"id: {article['id']}\n")
-    file.write(f"title: {article['title']}\n")
-    file.write(f"slug: {article['slug']}\n")
-    file.write(f"publishedAt: {article['publishedAt']}\n")
-    file.write(f"locale: {article['locale']}\n")
-    file.write(f"excerpt: {article['excerpt']}\n")
-    file.write(f"category: {article['category']}\n")
-    file.write(f"tags: [{article['tags']}]\n")
-    file.write(f"---\n\n")
+    file.write(f"ID: {article['id']}\n")
+    file.write(f"Title: {article['title']}\n")
+    file.write(f"Slug: {article['slug']}\n")
+    file.write(f"Published At: {article['publishedAt']}\n")
+    file.write(f"Locale: {article['locale']}\n")
+    file.write(f"Excerpt: {article['excerpt']}\n")
+    file.write(f"Category: {article['category']}\n")
+    file.write(f"Tags: {article['tags']}\n")
+    file.write("\n")
 
     # Write highlights
     if article['highlights']:
-        file.write(f"## Highlights\n")
+        file.write(f"Highlights:\n")
         for highlight in article['highlights']:
             file.write(f"- {highlight}\n")
         file.write("\n")
 
     # Write content
     if article['content']:
-        file.write(f"## Content\n\n")
+        file.write(f"Content:\n\n")
         for paragraph in article['content']:
             file.write(f"{paragraph}\n\n")
 
     # Write credits
     if article['credit']:
-        file.write(f"## Credit\n")
+        file.write(f"Credit:\n")
         for credit in article['credit']:
             file.write(f"- {credit}\n")
         file.write("\n")
 
-    file.write(f"---\n\n")
+    file.write("\n" + "="*40 + "\n\n")
 
 # Function to clean and flatten JSON data
 def extract_metadata(json_data):
@@ -101,7 +100,7 @@ def extract_metadata(json_data):
 # Dictionary to hold articles grouped by their published date
 articles_by_date = defaultdict(list)
 
-# Convert JSON files to markdown files and categorize articles by published date
+# Convert JSON files to plain text files and categorize articles by published date
 for filename in os.listdir(input_dir):
     if filename.endswith('.json'):
         input_file = os.path.join(input_dir, filename)
@@ -126,19 +125,18 @@ for filename in os.listdir(input_dir):
 current_date = datetime.utcnow()
 last_14_days = [(current_date - timedelta(days=i)).strftime('%Y-%m-%d') for i in range(14)]
 
-# Merge articles from the last 14 days into a single markdown file
-merged_filename = f"article_{last_14_days[-1]}_{last_14_days[0]}.md"
+# Merge articles from the last 14 days into a single plain text file
+merged_filename = f"article_{last_14_days[-1]}_{last_14_days[0]}.txt"
 output_file = os.path.join(output_dir, merged_filename)
 
 with open(output_file, 'w', encoding='utf-8') as file:
     for date in last_14_days:
         if date in articles_by_date:
             for article in articles_by_date[date]:
-                # Write the article to the markdown file
-                write_dict_to_markdown(article, file)
+                # Write the article to the plain text file
+                write_dict_to_text(article, file)
 
 print(f"Articles from the last 14 days have been successfully written to {output_file}")
-
 
 
 # import os
@@ -269,16 +267,17 @@ print(f"Articles from the last 14 days have been successfully written to {output
 # current_date = datetime.utcnow()
 # last_14_days = [(current_date - timedelta(days=i)).strftime('%Y-%m-%d') for i in range(14)]
 
-# # Write articles to markdown files, one file per date within the last 14 days
-# for date in last_14_days:
-#     if date in articles_by_date:
-#         output_file = os.path.join(output_dir, f"article_{date}.md")
-        
-#         with open(output_file, 'w', encoding='utf-8') as file:
+# # Merge articles from the last 14 days into a single markdown file
+# merged_filename = f"article_{last_14_days[-1]}_{last_14_days[0]}.md"
+# output_file = os.path.join(output_dir, merged_filename)
+
+# with open(output_file, 'w', encoding='utf-8') as file:
+#     for date in last_14_days:
+#         if date in articles_by_date:
 #             for article in articles_by_date[date]:
 #                 # Write the article to the markdown file
 #                 write_dict_to_markdown(article, file)
-        
-#         print(f"Articles from {date} have been successfully written to {output_file}")
 
-# print("Processing complete.")
+# print(f"Articles from the last 14 days have been successfully written to {output_file}")
+
+
