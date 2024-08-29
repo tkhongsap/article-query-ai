@@ -9,14 +9,14 @@ output_dir = r'D:\github-repo-tkhongsap\article-query-ai\tmp\docs-by-date'
 # Ensure the output directory exists
 os.makedirs(output_dir, exist_ok=True)
 
-# Get the current date and calculate the date 7 days ago
-current_date = datetime.utcnow()
-seven_days_ago = current_date - timedelta(days=7)
+# Get the current date in Bangkok time and calculate the date 14 days ago
+current_date = datetime.now()  # Assumes the `publishedAt` in the files is already in local Bangkok time
+fourteen_days_ago = current_date - timedelta(days=14)
 
-# Function to check if the article is within the last 7 days
-def is_within_last_7_days(published_at_str):
-    published_at = datetime.strptime(published_at_str, "%Y-%m-%dT%H:%M:%S.%fZ")
-    return published_at >= seven_days_ago
+# Function to check if the article is within the last 14 days
+def is_within_last_14_days(published_at_str):
+    published_at = datetime.strptime(published_at_str, "%Y-%m-%d %H:%M:%S")
+    return published_at >= fourteen_days_ago
 
 # Iterate through all JSON files in the input directory
 for file_name in os.listdir(input_dir):
@@ -32,11 +32,11 @@ for file_name in os.listdir(input_dir):
         for article in articles:
             published_at = article["attributes"]["publishedAt"]
             
-            # If the article is within the last 7 days, add it to the filtered list
-            if is_within_last_7_days(published_at):
+            # If the article is within the last 14 days, add it to the filtered list
+            if is_within_last_14_days(published_at):
                 filtered_articles.append(article)
             else:
-                # Since the articles are in descending order, we can stop once we find one that's older than 7 days
+                # Since the articles are in descending order, we can stop once we find one that's older than 14 days
                 break
         
         # If there are filtered articles, save them to a new file
