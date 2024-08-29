@@ -8,10 +8,11 @@ from datetime import datetime, timedelta
 from dotenv import load_dotenv
 from pprint import pprint
 from pathlib import Path
-from utils.get_doc_tools import get_doc_tools
+from utils.rag_tools import get_doc_tools
 
 from utils.custom_css_main_page import get_main_custom_css
 from utils.custom_css_banner import get_social_news_banner
+from utils.role_description_prompts import JOURNALIST_ROLE_PROMPT  # Updated import path
 
 from llama_index.llms.openai import OpenAI as LlamaOpenAI
 from llama_index.embeddings.openai import OpenAIEmbedding
@@ -78,7 +79,7 @@ def load_and_process_documents():
         vector_query_tool, summary_tool = get_doc_tools(str(article), article.stem)
         paper_to_tools_dict[article] = [vector_query_tool, summary_tool]
 
-    llm = LlamaOpenAI(model="gpt-4o", api_key=openai_api_key)
+    llm = LlamaOpenAI(model="gpt-4o", api_key=openai_api_key, max_tokens=3000)
     embed_model = OpenAIEmbedding(model="text-embedding-3-large", api_key=openai_api_key)
 
     all_tools = [tool for tools in paper_to_tools_dict.values() for tool in tools]
@@ -88,17 +89,7 @@ def load_and_process_documents():
     agent_worker = FunctionCallingAgentWorker.from_tools(
         tool_retriever=obj_retriever,
         llm=llm,
-        system_prompt="""You are an AI journalist specializing in generating concise, accurate, and objective news reports. 
-        Your primary task is to answer user queries by summarizing and analyzing information from the provided news articles or documents.
-
-        Follow these guidelines:
-        1. Utilize the tools provided to extract information directly from the given sources.
-        2. Prioritize clarity, accuracy, and brevity in your responses, adhering to journalistic standards.
-        3. Summarize key points and highlight relevant facts without introducing personal opinions or external information.
-        4. Ensure your language and tone remain professional, unbiased, and appropriate for news reporting.
-        5. Respond in the same language as the user's query and format your summaries to be easily understood by a broad audience.
-
-        Remember, your goal is to inform users efficiently and accurately based on the provided materials.""",
+        system_prompt=JOURNALIST_ROLE_PROMPT,
         verbose=False
     )
 
