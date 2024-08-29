@@ -1,138 +1,103 @@
 import streamlit as st
-import os
 import openai
-import nest_asyncio
 import warnings
+import base64
 from openai import OpenAI
-from datetime import datetime, timedelta
-from dotenv import load_dotenv
-from pprint import pprint
-from pathlib import Path
-from utils.rag_tools import get_doc_tools
-
 from utils.custom_css_main_page import get_main_custom_css
 from utils.custom_css_banner import get_social_news_banner
-from utils.role_description_prompts import JOURNALIST_ROLE_PROMPT  # Updated import path
-
-from llama_index.llms.openai import OpenAI as LlamaOpenAI
-from llama_index.embeddings.openai import OpenAIEmbedding
-from llama_index.core import VectorStoreIndex
-from llama_index.core.objects import ObjectIndex
-from llama_index.core.agent import FunctionCallingAgentWorker, AgentRunner
+from utils.openai_utils import generate_response
+from utils.message_utils import format_message, message_func  # Import the utility functions
+from PIL import Image
 
 # Ignore all deprecation warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
-# Set page config
-st.set_page_config(page_title="💬 Intelligence Social News Analytics", page_icon="📺", layout="wide")
+# Initialize OpenAI client
+client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
-# Apply custom CSS
-@st.cache_data
+# Set assistant id
+assistant_id = "asst_umSmCCzIDHsxjubyAR0KHanI"
+
+# Set page config
+st.set_page_config(
+    page_title="💬 Intelligence Social News Analytics",
+    page_icon="📺",
+    layout="wide"
+)
+
+# Load and display social news banner
 def load_social_news_banner():
     return get_social_news_banner()
 
 st.markdown(load_social_news_banner(), unsafe_allow_html=True)
 
-# Apply custom CSS
-@st.cache_data
+# Load and display main custom CSS
 def load_main_custom_css():
     return get_main_custom_css()
 
 st.markdown(load_main_custom_css(), unsafe_allow_html=True)
 
-
-# Function to get the OpenAI API key from Streamlit secrets
-def get_openai_api_key():
-    if "OPENAI_API_KEY" not in st.secrets:
-        st.error("OpenAI API key not found in Streamlit secrets.")
-        st.stop()
-    return st.secrets["OPENAI_API_KEY"]
-
-# Initialize OpenAI API client with API key from Streamlit secrets
-openai_api_key = get_openai_api_key()
-openai_client = LlamaOpenAI(api_key=openai_api_key)
+# Sidebar initialization success message
 st.sidebar.success("OpenAI client initialized successfully.")
 
+# Display sidebar information
 def display_sidebar_info():
     st.sidebar.markdown("---")
     st.sidebar.markdown(
         """
         <div style="background-color: #f0f2f6; padding: 10px; border-radius: 5px; border-left: 5px solid #4b9ff2;">
             <h4 style="color: #4b9ff2; margin-top: 0;">📅 Data Coverage</h4>
-            <p style="margin-bottom: 0;">This news analytics system contains data from the <strong>last 7 days</strong>. Stay up-to-date with the most recent events and trends!</p>
+            <p style="margin-bottom: 0;">This news analytics system contains data from the <strong>last 14 days</strong>. Stay up-to-date with the most recent events and trends!</p>
         </div>
         """,
         unsafe_allow_html=True
     )
-    
-# Display sidebar info
 display_sidebar_info()
-    
-@st.cache_resource
-def load_and_process_documents():
-    docs_directory = Path("docs")
-    articles = [file for file in docs_directory.iterdir() if file.is_file() and file.suffix == '.txt']
-    articles.sort()
 
-    paper_to_tools_dict = {}
-    for article in articles:
-        vector_query_tool, summary_tool = get_doc_tools(str(article), article.stem)
-        paper_to_tools_dict[article] = [vector_query_tool, summary_tool]
+warnings.filterwarnings("ignore")
+chat_history = []
 
-    llm = LlamaOpenAI(model="gpt-4o", api_key=openai_api_key, max_tokens=3000, temperature=0.2)
-    embed_model = OpenAIEmbedding(model="text-embedding-3-large", api_key=openai_api_key)
+# Model selection radio button
+model = st.radio(
+    "Choose a model:",  # Provide a meaningful label
+    options=["GPT-4o"],
+    index=0,
+    horizontal=True,
+    label_visibility="collapsed"  # Optional: hide the label if not needed
+)
+st.session_state["model"] = model
 
-    all_tools = [tool for tools in paper_to_tools_dict.values() for tool in tools]
-    obj_index = ObjectIndex.from_objects(all_tools, index_cls=VectorStoreIndex)
-    obj_retriever = obj_index.as_retriever(similarity_top_k=7)
+# Load icons for user and assistant
+def get_image_base64(image_path):
+    with open(image_path, "rb") as image_file:
+        encoded_string = base64.b64encode(image_file.read()).decode()
+    return f"data:image/png;base64,{encoded_string}"
 
-    agent_worker = FunctionCallingAgentWorker.from_tools(
-        tool_retriever=obj_retriever,
-        llm=llm,
-        system_prompt=JOURNALIST_ROLE_PROMPT,
-        verbose=False
-    )
+# Load icons for user and assistant
+user_icon_path = "image/user_icon.jpg"
+assistant_icon_path = "image/assistant_icon.jpg"
 
-    return AgentRunner(agent_worker)
+user_icon_base64 = get_image_base64(user_icon_path)
+assistant_icon_base64 = get_image_base64(assistant_icon_path)
 
 # Initialize session state for messages
 if "messages" not in st.session_state:
-    st.session_state.messages = []
-
-# Function to display chat messages
-def display_chat_messages():
-    for message in st.session_state.messages:
-        with st.chat_message(message["role"], avatar="🧑‍💻" if message["role"] == "user" else "🤖"):
-            st.markdown(message["content"])
-
-# Load the agent
-agent = load_and_process_documents()
-st.sidebar.success("Agent loaded successfully.")
+    st.session_state["messages"] = [
+        {"role": "assistant", "content": "Meet your AI-Powered Assistant for today! 📊💼"}
+    ]
 
 # Display chat messages
-display_chat_messages()
+for message in st.session_state["messages"]:
+    is_user = message["role"] == "user"
+    message_func(message["content"], user_icon_base64, assistant_icon_base64, is_user=is_user, model=model)
 
-# Chat input and response
-user_query = st.chat_input("Ask a question about the articles")
+# Accept user input and generate a response
+prompt = st.chat_input("Your message")
+if prompt:
+    st.session_state["messages"].append({"role": "user", "content": prompt})
+    message_func(prompt, user_icon_base64, assistant_icon_base64, is_user=True, model=model)
 
-if user_query:
-    # Add user message to chat history
-    st.session_state.messages.append({"role": "user", "content": user_query})
-    
-    with st.chat_message("user", avatar="🧑‍💻"):
-        st.markdown(user_query)
-    
-    with st.chat_message("assistant", avatar="🤖"):
-        with st.spinner("Generating response..."):
-            try:
-                response = agent.query(user_query)
-                
-                # Display the main response text
-                st.markdown(response.response)
-                
-                # Add assistant message to chat history
-                st.session_state.messages.append({"role": "assistant", "content": response.response})
-                    
-            except Exception as e:
-                st.error(f"An error occurred while processing your query: {str(e)}")
-                st.exception(e)  # This will display the full traceback for debugging
+    response = generate_response(prompt, assistant_id)
+    st.session_state["messages"].append({"role": "assistant", "content": response})
+    message_func(response, user_icon_base64, assistant_icon_base64, model=model)
+

@@ -1,118 +1,87 @@
 
-# Social News Analysis and Query App
 
-This repository contains a Retrieval-Augmented Generation (RAG) pipeline for creating a social news analysis and query application. The app allows users to fetch, filter, and analyze articles, as well as query the data using a Streamlit-based interface.
+# 💬 Intelligence Social News Analytics
 
-## Table of Contents
-
-- [Introduction](#introduction)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Scripts](#scripts)
-- [Streamlit App](#streamlit-app)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Introduction
-
-The Social News Analysis and Query App is built to fetch articles from a remote API, filter them by date, and provide a user-friendly interface for querying the articles. The app utilizes Python scripts to process and filter articles and a Streamlit app to present the data in an interactive way.
+This project is a web application built using [Streamlit](https://streamlit.io/), designed to provide intelligent social news analytics. The application integrates with OpenAI's API to generate insights and responses based on user inputs, and it features a customized UI for displaying messages.
 
 ## Features
 
-- **Article Extraction**: Fetches articles from a remote API and stores them locally in JSON format.
-- **Date Filtering**: Filters articles by specific date ranges.
-- **Streamlit Interface**: Provides an interactive interface for querying and analyzing the articles.
-- **Complex Query Handling**: Utilizes Large Language Models (LLMs) and LlamaIndex to handle complex queries that go beyond simple searches.
+- **AI-Powered Chatbot**: Interact with an AI-powered assistant using OpenAI's API.
+- **Custom CSS Styling**: The application includes custom CSS for both the main page and social news banner.
+- **Session Management**: The app manages chat history within the session to maintain context.
+- **Interactive Sidebar**: Provides additional information and model selection options.
+- **Image Handling**: Loads and displays user and assistant avatars using Base64 encoded images.
 
-## Installation
+## Project Structure
+
+- **`app.py`**: The main application script that initializes the Streamlit app, handles user input, and displays responses.
+- **`utils/`**: Contains utility functions used across the application.
+  - **`custom_css_main_page.py`**: Custom CSS for the main page.
+  - **`custom_css_banner.py`**: Custom CSS for the social news banner.
+  - **`openai_utils.py`**: Utility functions for interacting with OpenAI's API.
+  - **`message_utils.py`**: Functions for formatting and displaying messages in the chatbot UI.
+
+## Setup and Installation
 
 ### Prerequisites
 
-- Python 3.8 or above
-- pip (Python package installer)
+- Python 3.7+
+- Streamlit
+- OpenAI API Key
 
-### Clone the Repository
+### Installation
 
-```bash
-git clone https://github.com/yourusername/social-news-analysis-app.git
-cd social-news-analysis-app
-```
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yourusername/intelligence-social-news-analytics.git
+   cd intelligence-social-news-analytics
+   ```
 
-### Install Dependencies
+2. **Install the required packages**:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-```bash
-pip install -r requirements.txt
-```
+3. **Set up your OpenAI API key**:
+   - Add your OpenAI API key to your Streamlit secrets. You can do this by creating a `.streamlit/secrets.toml` file in the root directory with the following content:
+     ```toml
+     [secrets]
+     OPENAI_API_KEY = "your-openai-api-key"
+     ```
+
+4. **Run the application**:
+   ```bash
+   streamlit run app.py
+   ```
 
 ## Usage
 
-### 1. Extract Articles
+1. **Model Selection**: Use the radio button in the sidebar to select your preferred AI model.
+2. **Chat Input**: Enter your message in the chat input field at the bottom of the page.
+3. **View Responses**: The AI assistant will respond to your messages in real-time, displayed with custom-styled messages.
 
-Run the script to fetch articles from the API and split them into smaller JSON files.
+## Utility Functions
 
-```bash
-python 00-extract-articles.py
-```
+- **`format_message(text)`**:
+  - Formats the messages for display in the chatbot UI.
+  - Escapes HTML in the text and properly formats code blocks.
 
-### 2. Filter Articles by Date
+- **`message_func(text, user_icon_base64, assistant_icon_base64, is_user=False, model="Claude-3 Haiku")`**:
+  - Displays a message in the chatbot UI.
+  - Handles both user and assistant messages with appropriate alignment and styling.
 
-Use the date filtering script to filter the articles by a specific date range.
+## Customization
 
-```bash
-python 01-filter-articles-by-date.py
-```
-
-### 3. Run the Streamlit App
-
-Start the Streamlit app to interact with the articles.
-
-```bash
-streamlit run app-streamlit.py
-```
-
-## Scripts
-
-### `00-extract-articles.py`
-
-This script fetches articles from a remote API and splits them into multiple JSON files.
-
-### `01-filter-articles-by-date.py`
-
-This script filters the articles by a specific date range.
-
-### `02-write-articles-by-date.py`
-
-This script writes the filtered articles to files for further processing.
-
-### `app-streamlit.py`
-
-The main script that runs the Streamlit app for querying and analyzing the articles.
-
-## Streamlit App
-
-The Streamlit app (`app-streamlit.py`) is the core of the social news analysis and query interface. It is designed to enable users to interact with the extracted and filtered articles through a user-friendly interface. The app offers the following key features:
-
-- **Multi-Agent Document RAG**: This app uniquely integrates a multi-agent system that leverages both Large Language Models (LLMs) and LlamaIndex. This allows for more complex and nuanced queries, enabling users to analyze the content deeply.
-  
-- **Complex Query Handling**: Users can query complex questions, such as comparing different topics or providing in-depth analysis based on the content. This goes beyond simple keyword searches, making the app a powerful tool for social news analysis.
-
-- **LlamaIndex Integration**: The app uses LlamaIndex to structure and retrieve data efficiently, allowing users to interact with the content in a meaningful way.
-
-- **Custom User Interface**: The app includes custom CSS for a polished look and feel, making the user experience more engaging.
-
-### Example Queries
-
-Here are some examples of complex queries that the app can handle:
-
-- "Compare the sentiment of articles published on climate change versus those on economic policies."
-- "Provide an analysis of the most mentioned topics in the last month's articles."
-- "Summarize the different perspectives on social justice issues across various articles."
+You can customize the CSS styles or add additional functionalities by modifying the utility scripts under the `utils/` directory.
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a pull request or open an issue if you find any bugs or have suggestions for improvements.
+Contributions are welcome! Please fork this repository, make your changes, and submit a pull request.
 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For any inquiries, please contact `ta.khongsap@gmail.com`.
