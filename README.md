@@ -1,87 +1,155 @@
 
+# Article Query AI Pipeline
 
-# 💬 Intelligence Social News Analytics
+This project automates the process of extracting articles, filtering and converting them to markdown files, uploading them to OpenAI's vector store, and interacting with the data through a Streamlit application.
 
-This project is a web application built using [Streamlit](https://streamlit.io/), designed to provide intelligent social news analytics. The application integrates with OpenAI's API to generate insights and responses based on user inputs, and it features a customized UI for displaying messages.
+## Table of Contents
 
-## Features
+- [Project Overview](#project-overview)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Step-by-Step Guide](#step-by-step-guide)
+  - [1. Extract Articles](#1-extract-articles)
+  - [2. Filter Articles by Date](#2-filter-articles-by-date)
+  - [3. Convert Articles to Markdown](#3-convert-articles-to-markdown)
+  - [4. Upload Articles to OpenAI Vector Store](#4-upload-articles-to-openai-vector-store)
+  - [5. Streamlit Application](#5-streamlit-application)
+- [Running the Full Pipeline](#running-the-full-pipeline)
+- [Contributing](#contributing)
+- [License](#license)
 
-- **AI-Powered Chatbot**: Interact with an AI-powered assistant using OpenAI's API.
-- **Custom CSS Styling**: The application includes custom CSS for both the main page and social news banner.
-- **Session Management**: The app manages chat history within the session to maintain context.
-- **Interactive Sidebar**: Provides additional information and model selection options.
-- **Image Handling**: Loads and displays user and assistant avatars using Base64 encoded images.
+## Project Overview
 
-## Project Structure
+This project automates the handling of articles through a pipeline that:
 
-- **`app.py`**: The main application script that initializes the Streamlit app, handles user input, and displays responses.
-- **`utils/`**: Contains utility functions used across the application.
-  - **`custom_css_main_page.py`**: Custom CSS for the main page.
-  - **`custom_css_banner.py`**: Custom CSS for the social news banner.
-  - **`openai_utils.py`**: Utility functions for interacting with OpenAI's API.
-  - **`message_utils.py`**: Functions for formatting and displaying messages in the chatbot UI.
+1. Extracts articles from an external API.
+2. Filters them by date (within the last 14 days).
+3. Converts the filtered articles to markdown files.
+4. Uploads the markdown files to OpenAI's vector store.
+5. Uses a Streamlit application to query and interact with the data through OpenAI's API.
 
-## Setup and Installation
+## Prerequisites
 
-### Prerequisites
+- Python 3.x
+- pip (Python package installer)
+- [Streamlit](https://streamlit.io/)
+- [OpenAI API Key](https://platform.openai.com/signup) (stored in a `.env` file)
 
-- Python 3.7+
-- Streamlit
-- OpenAI API Key
+## Installation
 
-### Installation
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/yourusername/intelligence-social-news-analytics.git
-   cd intelligence-social-news-analytics
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/yourusername/article-query-ai.git
+   cd article-query-ai
    ```
 
-2. **Install the required packages**:
-   ```bash
+2. Install the required Python packages:
+   ```sh
    pip install -r requirements.txt
    ```
 
-3. **Set up your OpenAI API key**:
-   - Add your OpenAI API key to your Streamlit secrets. You can do this by creating a `.streamlit/secrets.toml` file in the root directory with the following content:
-     ```toml
-     [secrets]
-     OPENAI_API_KEY = "your-openai-api-key"
-     ```
-
-4. **Run the application**:
-   ```bash
-   streamlit run app.py
+3. Set up your `.env` file with your OpenAI API key:
+   ```sh
+   echo "OPENAI_API_KEY=your-openai-api-key" > .env
    ```
 
-## Usage
+## Step-by-Step Guide
 
-1. **Model Selection**: Use the radio button in the sidebar to select your preferred AI model.
-2. **Chat Input**: Enter your message in the chat input field at the bottom of the page.
-3. **View Responses**: The AI assistant will respond to your messages in real-time, displayed with custom-styled messages.
+### 1. Extract Articles
 
-## Utility Functions
+The first step involves extracting articles from an external API. This is done using the `00-extract-articles.py` script.
 
-- **`format_message(text)`**:
-  - Formats the messages for display in the chatbot UI.
-  - Escapes HTML in the text and properly formats code blocks.
+- **Script:** `00-extract-articles.py`
+- **Functionality:** This script fetches articles from the specified API endpoint, converts the publication times to Bangkok time, and saves the articles into JSON files.
+- **Output:** JSON files containing articles, split into smaller chunks for easier processing.
 
-- **`message_func(text, user_icon_base64, assistant_icon_base64, is_user=False, model="Claude-3 Haiku")`**:
-  - Displays a message in the chatbot UI.
-  - Handles both user and assistant messages with appropriate alignment and styling.
+```sh
+python 00-extract-articles.py
+```
 
-## Customization
+### 2. Filter Articles by Date
 
-You can customize the CSS styles or add additional functionalities by modifying the utility scripts under the `utils/` directory.
+The next step is to filter the articles to include only those published within the last 14 days.
+
+- **Script:** `01-filter-articles-by-date.py`
+- **Functionality:** This script filters the extracted articles to include only those published within the last 14 days. It saves the filtered articles into a separate directory.
+- **Output:** Filtered JSON files.
+
+```sh
+python 01-filter-articles-by-date.py
+```
+
+### 3. Convert Articles to Markdown
+
+After filtering, the articles are converted to markdown format for easier readability and processing.
+
+- **Script:** `02-write-aritcles-by-date.py`
+- **Functionality:** This script converts the JSON files containing filtered articles into markdown files, grouped by their publication date.
+- **Output:** Markdown files saved in the `docs` directory.
+
+```sh
+python 02-write-aritcles-by-date.py
+```
+
+### 4. Upload Articles to OpenAI Vector Store
+
+The markdown files are then uploaded to OpenAI's vector store for querying and analysis.
+
+- **Script:** `03-upload-articles-to-vector-store.py`
+- **Functionality:** This script uploads the markdown files to OpenAI's vector store. It first deletes any existing files in the vector store before uploading the new ones.
+- **Output:** Files uploaded to the vector store, ready for querying.
+
+```sh
+python 03-upload-articles-to-vector-store.py
+```
+
+### 5. Streamlit Application
+
+Finally, a Streamlit application allows users to interact with the articles through OpenAI's assistant.
+
+- **Script:** `app-streamlit.py`
+- **Functionality:** This Streamlit application provides an interface to query the articles uploaded to the OpenAI vector store. It uses a custom assistant to provide responses based on the uploaded data.
+- **Output:** A web application running on `localhost`, where users can interact with the data.
+
+You can access the live Streamlit application at: [News Article Query AI](https://news-article-query-ai-fxfxmrwbqfhf3hnzyappf3s.streamlit.app/).
+
+```sh
+streamlit run app-streamlit.py
+```
+
+## Running the Full Pipeline
+
+To run the entire pipeline sequentially, follow these steps:
+
+1. Extract articles:
+   ```sh
+   python 00-extract-articles.py
+   ```
+
+2. Filter articles by date:
+   ```sh
+   python 01-filter-articles-by-date.py
+   ```
+
+3. Convert filtered articles to markdown:
+   ```sh
+   python 02-write-aritcles-by-date.py
+   ```
+
+4. Upload markdown files to the OpenAI vector store:
+   ```sh
+   python 03-upload-articles-to-vector-store.py
+   ```
+
+5. Run the Streamlit application:
+   ```sh
+   streamlit run app-streamlit.py
+   ```
 
 ## Contributing
 
-Contributions are welcome! Please fork this repository, make your changes, and submit a pull request.
+If you'd like to contribute to this project, feel free to fork the repository and submit a pull request.
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## Contact
-
-For any inquiries, please contact `ta.khongsap@gmail.com`.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
